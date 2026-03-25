@@ -1,0 +1,65 @@
+/* style.css */
+
+/* Fond de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #ad0f0f; /* dégradé rouge/orange */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur du formulaire */
+.login-container {
+    background-color: #ffffff; /* blanc */
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    width: 350px;
+    text-align: center;
+}
+
+/* Titre */
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #d30000;
+    font-size: 24px;
+}
+
+/* Champs input */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Bouton login */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d35400;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #e67e22;
+}
+
+/* Message d'erreur */
+.login-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}

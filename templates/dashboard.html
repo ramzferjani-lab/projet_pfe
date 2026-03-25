@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- PWA -->
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<meta name="theme-color" content="#c40000">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<meta name="theme-color" content="#c40000">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo-zone">
+
+<img src="{{ url_for('static', filename='logo.png') }}">
+
+</div>
+
+<a href="/dashboard">🏠 Accueil</a>
+<a href="/historique">📊 Historique</a>
+<a href="/statistique">📈 Statistique</a>
+
+<div class="logout-zone">
+<a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<header>
+
+<h2>Dashboard - La Pratique Electronique</h2>
+
+<div id="clock"></div>
+
+</header>
+
+<div class="search-zone">
+
+<form action="/search" method="post">
+
+<select name="departement">
+<option value="">Choisir Département</option>
+<option value="cms_manuel">CMS Manuel</option>
+<option value="cms_robotise">CMS Robotisé</option>
+<option value="controle_test">Contrôle & Test</option>
+<option value="emballage">Emballage</option>
+</select>
+
+<input type="date" name="date">
+<input type="time" name="time">
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
+
+<div class="departments">
+
+<div class="dep-card" onclick="window.location.href='/cms_manuel'">
+<img src="{{ url_for('static', filename='cms_manuel.jpeg') }}">
+<div class="dep-title">CMS Manuel</div>
+</div>
+
+<div class="dep-card" onclick="window.location.href='/cms_robotise'">
+<img src="{{ url_for('static', filename='cms_robot.jpeg') }}">
+<div class="dep-title">CMS Robotisé</div>
+</div>
+
+<div class="dep-card" onclick="window.location.href='/controle_test'">
+<img src="{{ url_for('static', filename='controle_test.jpeg') }}">
+<div class="dep-title">Contrôle & Test</div>
+</div>
+
+<div class="dep-card" onclick="window.location.href='/emballage'">
+<img src="{{ url_for('static', filename='emballage.jpeg') }}">
+<div class="dep-title">Emballage</div>
+</div>
+
+<div class="dep-card magasin" onclick="window.location.href='/magasin'">
+<img src="{{ url_for('static', filename='magasin.jpeg') }}">
+<div class="dep-title">Magasin</div>
+</div>
+
+</div>
+
+<footer>
+
+<div>
+<b>Adresse</b><br>
+BP #25 Diar Ben Salem<br>
+8060 – Nabeul – Tunisie
+</div>
+
+<div>
+<b>Téléphones</b><br>
++216 72 23 85 50<br>
+Fax: +216 72 23 86 60
+</div>
+
+<div>
+<b>Contacts</b><br>
+lpe@lapratique-electronique.com<br>
+www.lapratique-electronique.com
+</div>
+
+<div>
+<b>Horaires</b><br>
+Lundi-Vendredi : 8h – 16h30<br>
+Dimanche : Fermé
+</div>
+
+</footer>
+
+</div>
+
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/service-worker.js')
+    .then(() => console.log("SW registered"));
+}
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Departement 1</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Menu</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/departement1">Departement 1</a>
+<a href="/departement2">Departement 2</a>
+<a href="/departement3">Departement 3</a>
+<a href="/departement4">Departement 4</a>
+<a href="/historique">Historique</a>
+
+<a class="logout" href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>Departement 1</h1>
+
+<p>Les courbes des grandeurs mesurées apparaîtront ici.</p>
+
+<div class="chart"></div>
+
+<div class="time" id="time"></div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
